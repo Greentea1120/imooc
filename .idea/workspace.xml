@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26b01462-f935-4cfc-9a02-28214f5d5843" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-    </list>
+    <list default="true" id="26b01462-f935-4cfc-9a02-28214f5d5843" name="默认的" comment="" />
     <ignored path="www.greentea.com.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -232,12 +230,12 @@
       <updated>1487827950570</updated>
       <workItem from="1487827954924" duration="11205000" />
       <workItem from="1488346066901" duration="788000" />
-      <workItem from="1488866977596" duration="91000" />
+      <workItem from="1488866977596" duration="344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12084000" />
+    <option name="totallyTimeSpent" value="12337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="2" width="1918" height="1037" extended-state="0" />
