@@ -18,6 +18,7 @@ var login = {
 
         if(!password){
             dialog.error('密码不能为空!');
+            // console.log(1);
         }
 
         var url = "/admin/login/check";
@@ -26,6 +27,8 @@ var login = {
         $.post(url,data,function(result){
             if(result.status == 0){
                 dialog.error(result.message);
+            }else if(result.status == 1){
+                dialog.success(result.message,'/admin/index');
             }
         },'JSON');
     }
