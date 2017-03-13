@@ -58,7 +58,7 @@
                         <thead>
                         <tr>
                             <th width="14">排序</th>
-                            <th>id</th>
+                            <!--<th>id</th>-->
                             <th>菜单名</th>
                             <th>模块名</th>
                             <th>类型</th>
@@ -69,11 +69,11 @@
                         <tbody>
                         <volist name="menus" id="menu">
                             <tr>
-                                <td><input size="4" type="text" name="" value=""/></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{$menu.menu_id}</td>
+                                <td>{$menu.name}</td>
+                                <td>{$menu.m}</td>
+                                <td>{$menu.type | getMenuType}</td>
+                                <td>{$menu.status | status}</td>
                                 <td></td>
                                 <td><span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id=""></span>    <a href="javascript:void(0)" attr-id="" id="singcms-delete"  attr-a="menu" attr-message="删除"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
                             </tr>
@@ -81,6 +81,9 @@
 
                         </tbody>
                     </table>
+                        <nav>
+                            <ul>{$pageRes}</ul>
+                        </nav>
                     </form>
                     <nav>
                         <ul class="pagination">
