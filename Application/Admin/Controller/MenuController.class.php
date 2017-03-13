@@ -8,6 +8,13 @@ use Think\Controller;
 class MenuController extends Controller {
     public function index(){
         $data = array();
+        if(isset($_REQUEST['type']) && in_array($_REQUEST['type'],array(0,1))){
+            $data['type'] = intval($_REQUEST['type']);
+            $this->assign('type',$data['type']);
+        }else{
+            $this->assign('type',-1);
+        }
+
         /*
          * 分页操作逻辑
          * */
@@ -20,6 +27,8 @@ class MenuController extends Controller {
         $pageRes = $res->show();
         $this->assign('pageRes',$pageRes);
         $this->assign('menus',$menus);
+//        dump($menus);
+//        die;
         $this->display();
     }
     public function add(){
@@ -45,4 +54,5 @@ class MenuController extends Controller {
             $this->display();
         }
     }
+
 }

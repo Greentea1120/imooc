@@ -18,7 +18,13 @@ function getMd5Password($password){
     return md5($password.C('MD5_PRE'));
 }
 function getMenuType($type){
-    return $type == 1 ? '后端菜单' : '前端导航';
+
+    if($type == 1){
+        $str = "后台菜单";
+    }elseif($type == 0){
+        $str = "前端导航";
+    }
+    return $str;
 }
 function status($status){
     if($status == 0){
