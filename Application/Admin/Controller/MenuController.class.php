@@ -102,6 +102,27 @@ class MenuController extends Controller {
 
     }
     public function listorder(){
-        print_r($_POST);
+//        print_r($_POST);
+        $listorder = $_POST['listorder'];
+        $jumpUrl = $_SERVER['HTTP_REFERER'];
+        $errors = array();
+        if ($listorder){
+            try {
+                foreach ($listorder as $menuId => $v) {
+                    //执行更新
+                    $id = D('Menu')->updateMenuListorderById($menuId, $v);
+                    if ($id === false) {
+                        $errors[] = $menuId;
+                    }
+                }
+            }catch (Exception $e){
+                return show(0,$e->getMessage(),array('jump_url'=>$jumpUrl));
+            }
+            if($errors){
+                return show(0,'排序失败'.implode(',',$errors),array('jump_url'=>$jumpUrl));
+            }
+            return show(1,'排序成功',array('jump_url'=>$jumpUrl));
+        }
+        return show(0,'排序数据失败',array('jump_url'=>$jumpUrl));
     }
 }

@@ -36,3 +36,14 @@ function status($status){
     }
     return $str;
 }
+function getAdminMenuUrl($nav){
+    $url = '/admin/'.$nav['c'].'/'.$nav['a'];
+    return $url;
+}
+function getActive($navc){
+    $c = strtolower(CONTROLLER_NAME);
+    if (strtolower($navc == $c)){
+        return 'class="active"';
+    }
+    return '';
+}
