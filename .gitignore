@@ -1,0 +1,4 @@
+*Runtime
+*.lock
+/Application/Runtime/*
+/Public/images/*

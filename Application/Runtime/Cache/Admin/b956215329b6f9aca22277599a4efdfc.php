@@ -139,7 +139,7 @@
                         <thead>
                         <tr>
                             <th width="14">排序</th>
-                            <!--<th>id</th>-->
+                            <th>id</th>
                             <th>菜单名</th>
                             <th>模块名</th>
                             <th>类型</th>
@@ -149,6 +149,7 @@
                         </thead>
                         <tbody>
                         <?php if(is_array($menus)): $i = 0; $__LIST__ = $menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><tr>
+                                <td><input size="4" type="text" name="listorder[<?php echo ($menu["menu_id"]); ?>]" value="<?php echo ($menu["listorder"]); ?>"/></td>
                                 <td><?php echo ($menu["menu_id"]); ?></td>
                                 <td><?php echo ($menu["name"]); ?></td>
                                 <td><?php echo ($menu["m"]); ?></td>
@@ -157,7 +158,7 @@
 
                                 <td>
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true" id="singcms-edit" attr-id="<?php echo ($menu["menu_id"]); ?>"></span>
-                                    <a href="javascript:void(0)" attr-id="" id="singcms-delete"  attr-a="menu" attr-message="删除">
+                                    <a href="javascript:void(0)" attr-id="<?php echo ($menu["menu_id"]); ?>" id="singcms-delete"  attr-a="menu" attr-message="删除">
                                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                                     </a>
                                 </td>
@@ -165,16 +166,15 @@
 
                         </tbody>
                     </table>
-                        <nav>
-                            <ul><?php echo ($pageRes); ?></ul>
-                        </nav>
-                    </form>
                     <nav>
                         <ul class="pagination">
-                            
+                            <?php echo ($pageRes); ?>
                         </ul>
                     </nav>
-                    
+                    <div>
+                        <button  id="button-listorder" type="button" class="btn btn-primary dropdown-toggle" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>更新排序 </button>
+                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -198,7 +198,7 @@
         'add_url' : '/admin/menu/add',
         'edit_url' : '/admin/menu/edit',
         'set_status_url' : '/admin/menu/setStatus',
-        'listorder_url' : '/admin.php/menu/listorder',
+        'listorder_url' : '/admin/menu/listorder',
 
     }
 </script>
