@@ -2,3 +2,4 @@
 *.lock
 /Application/Runtime/*
 /Public/images/*
+/.idea/*
