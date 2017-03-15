@@ -47,3 +47,11 @@ function getActive($navc){
     }
     return '';
 }
+function showKind($status,$data){
+    header('Content-type:application/json;charset=UTF-8');
+    if ($status == 0){
+        exit(json_encode(array('error'=>0,'url'=>$data)));
+    }else{
+        exit(json_encode(array('error'=>1,'url'=>$data)));
+    }
+}

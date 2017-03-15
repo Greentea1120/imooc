@@ -30,7 +30,7 @@ class CommonController extends Controller {
 	 * @return array
 	 */
 	public function getLoginUser() {
-		return session("adminUser");
+		return session("adminuser");
 	}
 
 	/**
