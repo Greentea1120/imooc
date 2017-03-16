@@ -52,6 +52,9 @@ function showKind($status,$data){
     if ($status == 0){
         exit(json_encode(array('error'=>0,'url'=>$data)));
     }else{
-        exit(json_encode(array('error'=>1,'url'=>$data)));
+        exit(json_encode(array('error'=>1,'message'=>'上传失败')));
     }
+}
+function getLoginUsername(){
+    return $_SESSION['adminuser']['username'] ? $_SESSION['adminuser']['username'] : "";
 }
