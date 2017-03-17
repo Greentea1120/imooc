@@ -58,3 +58,19 @@ function showKind($status,$data){
 function getLoginUsername(){
     return $_SESSION['adminuser']['username'] ? $_SESSION['adminuser']['username'] : "";
 }
+function getCatName($navs,$id){
+    foreach($navs as $nav){
+         $navList[$nav['menu_id']] = $nav['name'];
+    }
+    return isset($navList[$id]) ? $navList[$id] : '';
+}
+function getCopyFromById($id){
+    $copyFrom = C("COPY_FROM");
+    return $copyFrom[$id] ? $copyFrom[$id] : '';
+}
+function isThumb($thumb){
+    if ($thumb){
+        return '<span style="color:red;">有</span>';
+    }
+    return '无';
+}

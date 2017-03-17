@@ -31,7 +31,7 @@ class NewsModel extends Model{
         if (isset($data['catid']) && $data['catid']){
             $conditions['catid'] = intval($data['catid']);
         }
-        $offset = ($page-1).$pageSize;
+        $offset = ($page-1)*$pageSize;
         $list = $this->_db->where($conditions)
             ->order('listorder desc,news_id desc')
             ->limit($offset,$pageSize)->select();
@@ -45,8 +45,12 @@ class NewsModel extends Model{
         if (isset($data['catid']) && $data['catid']){
             $conditions['catid'] = intval($data['catid']);
         }
-        $this->_db->where($conditions)->count();
+        return $this->_db->where($conditions)->count();
 
+    }
+    public function find($id){
+        $data = $this->_db->where('news_id='.$id)->find();
+        return $data;
     }
 
 }
